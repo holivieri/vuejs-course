@@ -1,5 +1,7 @@
 <template>
-  <h1>Primera App</h1>
+  <h1 class="text-3xl font-bold underline">
+    Contador
+  </h1>
   <MyCounter :value="1" ></MyCounter>
   <MyCounterScript :value="2"></MyCounterScript>
   <MyCounterScript2 :value="3"></MyCounterScript2>
