@@ -13,7 +13,15 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
 
-const counter = ref(2);
+const props = defineProps({
+  value: {
+    type: Number,
+    default: 0,
+    require: true,
+   }
+});
+
+const counter = ref(props.value);
 
 const squareCounter = computed(() => counter.value * counter.value);
 const increment = ref(() => counter.value++);
