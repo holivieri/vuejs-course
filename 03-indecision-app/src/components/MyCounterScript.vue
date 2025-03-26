@@ -4,14 +4,16 @@
     <h3>Square: {{ squareCounter }}</h3>
 
     <div>
-      <button @click="increment">+1</button>
-      <button @click="decrement">-1</button>
+      <button class="p-5 bg-green-500 rounded hover:bg-green-700 mr-2" @click=counter++>+1</button>
+      <button class="p-5 bg-green-500 rounded hover:bg-green-700 mr-2" @click=counter-->-1</button>
     </div>
   </section>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from 'vue';
+import { useCounter } from '@/composables/useCounter';
+import { defineComponent } from 'vue';
+
 
 export default defineComponent({
   props: {
@@ -19,8 +21,7 @@ export default defineComponent({
     },
   setup(props) {
 
-    const counter = ref(props.value);
-    const squareCounter = computed(() => counter.value * counter.value);
+    const { counter, squareCounter } = useCounter(props.value);
 
     return {
       counter,
@@ -29,20 +30,4 @@ export default defineComponent({
 
   }
 )
-
-
-
-// import { computed, ref } from 'vue';
-
-// const props = defineProps({
-//   value: {
-//     type: Number,
-//     default: 0,
-//     require: true,
-//    }
-// });
-
-
-// const increment = ref(() => counter.value++);
-// const decrement = ref(() => counter.value--);
 </script>

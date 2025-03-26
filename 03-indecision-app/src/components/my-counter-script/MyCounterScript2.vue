@@ -4,8 +4,8 @@
     <h3>Square: {{ squareCounter }}</h3>
 
     <div>
-      <button @click="counter++">+1</button>
-      <button @click="counter--">-1</button>
+      <button class="p-5 bg-orange-500 rounded hover:bg-orange-700 mr-2" @click=counter++>+1</button>
+      <button class="p-5 bg-orange-500 rounded hover:bg-orange-700 mr-2" @click=counter-->-1</button>
     </div>
   </section>
 </template>
